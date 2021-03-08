@@ -1,0 +1,70 @@
+﻿@model Animals
+@{
+    string title = ViewBag.Action + " an Animal";
+    ViewBag.Title = title;
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Animal Index</title>
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" href="~/css/edit.css">
+
+    <!-- Broswer Icon -->
+    <link rel="shortcut icon" type="image/png" href="~/Images/favicon.png">
+</head>
+<body>
+
+
+    <div class="all-content">
+        <!-- start of form -->
+        <form asp-action="Edit" method="post">
+            <div class="container">
+
+                <!-- Start of Header section -->
+                <div class="header">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+                <!-- end of header section -->
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <!-- Start of index section -->
+                <div class="group">
+                    <div class="index">
+                        <label asp-for="Species">Species:</label>
+                        <input asp-for="Species" type="text">
+                    </div>
+
+                    <!-- drop down -->
+                    <div class="index-option">
+                        <label asp-for="TypeId">Type:</label>
+                        <select asp-for="TypeId">
+                            @foreach (TheAnimalIndex.Models.Type t in ViewBag.Types)
+                            {
+                                <option value="@t.TypeId">@t.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <input type="hidden" asp-for="AnimalId" />
+
+
+                    <!-- end of index section -->
+                </div>
+
+                <!-- buttons -->
+                <div class="submit">
+                    <button asp-controller="Home" asp-action="Index">Back</button>
+                    <button type="submit">@ViewBag.Action</button>
+
+
+                </div>
+            </div>
+        </form>
+        <!-- end of form -->
+    </div>
+</body>
+</html>

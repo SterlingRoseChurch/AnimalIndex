@@ -1,0 +1,102 @@
+/* imported fonts */
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Nova+Round&display=swap');
+
+
+/* Browser Styling */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #22c1c3;
+    background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);
+    background: linear-gradient(to right, #fdbb2d, #22c1c3);
+    color: var(--textColor);
+}
+
+
+:root{
+    --buttonMain: rgb(255, 160, 123);
+    --buttonHoover: rgb(94, 255, 228);
+    --textColor: rgb(54, 54, 54);
+    --smallSpace: 25px;
+    --space: 50px;
+ }
+
+
+/* Main content styling */
+.all-content{
+    margin-top: 125px;
+}
+
+.container{
+    background-image: radial-gradient(circle, rgb(255, 255, 255) , #fdbb2d );
+    width: 50%;
+    margin: auto;
+    border: 2px solid rgb(54, 54, 54);
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    margin-top: var(--smallSpace);
+    margin-bottom: var(--space);
+}
+
+.header p{
+    font-size: 22px;
+    font-family: 'Nova Round', cursive;
+}
+
+.header h1{
+    font-family: 'Coiny', cursive;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.buttons{
+    margin-bottom: var(--smallSpace);
+}
+
+.buttons button{
+    margin-right: 20px;
+}
+
+/* button styling */
+button{
+    background-color: var(--buttonMain);
+    font-size: 14px;
+    width: 125px;
+    padding: 3px;
+    outline: none;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: var(--buttonHoover);
+}
+/* /button styling */
+
+
+/* Mobile Responsive */
+@media only screen and (max-width: 1000px) {
+    .container{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .header p{
+        font-size: 16px;
+    }
+
+    button{
+        margin-bottom: 20px;
+    }
+}

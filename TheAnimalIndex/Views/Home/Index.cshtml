@@ -1,0 +1,93 @@
+﻿@model List<Animals>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- External StyleSheet -->
+    <link rel="stylesheet" href="~/css/Style.css">
+
+    <!-- Broswer Icon -->
+    <link rel="shortcut icon" type="image/png" href="~/Images/favicon.png">
+    <title>The Animal Index</title>
+</head>
+<body>
+
+    <!-- Page Content -->
+    <div class="all-content">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="header">
+                <h1 class="main-font">The Animal Index</h1>
+                <p class="second-font">How Many Animals Can you Name?</p>
+            </div>
+            <!-- /Header -->
+            <!-- Top Section -->
+            <form action="">
+                <div class="top-section">
+
+                    <!-- Add Button -->
+                    <div class="add-button">
+                        <button class="second-font" asp-controller="Animal" asp-action="Add">Add New Animal</button>
+                    </div>
+                    <!-- /Add Button -->
+
+                </div>
+                <!-- /Top Section -->
+                <!-- Index Talble -->
+                <div class="index">
+                    <table>
+
+                        <!-- Headers -->
+                        <th class="main-font">Species</th>
+                        <th class="main-font">Type</th>
+                        <th class="main-font">Action</th>
+
+                        <!-- Rows -->
+                        @foreach (var animals in Model)
+                        {
+                            <tr class="border">
+                                <td class="second-font border">@animals.Species</td>
+                                <td class="second-font border">@animals.Type.Name</td>
+                                <td class="border">
+                                    <button asp-controller="Animal" asp-action="Delete" 
+                                            asp-route-id="@animals.AnimalId" asp-route-slug="@animals.Slug" 
+                                            class="table-button second-font">Delete</button>
+                                    <button asp-controller="Animal" asp-action="Edit" 
+                                            asp-route-id="@animals.AnimalId" asp-route-slug="@animals.Slug"
+                                            class="table-button second-font">Edit</button>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </table>
+                </div>
+                <!-- /Index Table -->
+                <!-- Animal Counter -->
+                <div class="counter main-font">
+                    <h2></h2>
+                    <h2></h2>
+                    <h2>Animals Named: @Model.Count()</h2>
+                </div>
+                <!-- /Animal Counter -->
+                <!-- Footer Image -->
+                <div class="footer-image">
+                    <img src="~/Images/background.png" alt="Animal Footer Image">
+                </div>
+                <!-- /Footer Image -->
+
+            </form>
+        </div>
+    </div>
+    <!-- /page content -->
+
+</body>
+</html>

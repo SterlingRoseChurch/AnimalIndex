@@ -1,0 +1,41 @@
+﻿@model Animals
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Animal Tracker</title>
+
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="~/css/delete.css">
+
+    <!-- Broswer Icon -->
+    <link rel="shortcut icon" type="image/png" href="~/Images/favicon.png">
+</head>
+<body>
+
+    <form asp-action="Delete" method="post">
+        <div class="all-content">
+            <div class="container">
+
+                <!-- Header -->
+                <div class="header">
+                    <h1>Confirm Deletion of @Model.Species</h1>
+                    <p>Once deleted this item cannot be recovered.</p>
+                </div>
+                <!-- /Header -->
+                <input type="hidden" asp-for="AnimalId" />
+                <div class="buttons">
+                    <button type="submit">Yes</button>
+                    <button asp-controller="Home" asp-action="Index">No</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

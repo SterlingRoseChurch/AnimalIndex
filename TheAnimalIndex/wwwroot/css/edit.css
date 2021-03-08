@@ -1,0 +1,136 @@
+/* imported fonts */
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Nova+Round&display=swap');
+
+
+/* Browser Styling */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #22c1c3;
+    background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);
+    background: linear-gradient(to right, #fdbb2d, #22c1c3);
+    color: var(--textColor);
+}
+
+:root{
+    --buttonMain: rgb(255, 160, 123);
+    --buttonHoover: rgb(94, 255, 228);
+    --textColor: rgb(54, 54, 54);
+    --smallSpace: 25px;
+    --space: 50px;
+ }
+
+
+/* Content Styling */
+.all-content{
+    margin-top: 125px;
+}
+
+.container{
+    background-image: radial-gradient(circle, rgb(255, 255, 255) , #fdbb2d );
+    width: 50%;
+    margin: auto;
+    border: 2px solid rgb(54, 54, 54);
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header */
+.header{
+    margin-top: var(--smallSpace);
+}
+
+.header h1{
+    font-family: 'Coiny', cursive;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.header p{
+    font-family: 'Nova Round', cursive;
+    margin-bottom: var(--space);
+    font-size: 22px;
+}
+/* /header */
+
+
+
+/* input */
+.group {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(-smallSpace);
+}
+
+
+.index{
+    margin-bottom: var(--space);
+    margin-top: var(--space);
+}
+
+.index input{
+    font-size: 18px;
+    outline: none;
+    font-weight: 400;
+    padding: 1px;
+    font-family: 'Nova Round', cursive;
+}
+
+.index label{
+    font-size: 18px;
+    font-family: 'Nova Round', cursive;
+}
+
+.index-option{
+    margin-bottom: var(--space);
+}
+
+.index-option label, select, option{
+    font-size: 18px;
+    font-family: 'Nova Round', cursive;
+}
+/* /input section */
+
+
+/* buttons */
+.submit {
+    margin-bottom: var(--space);
+    margin-top: var(--space);
+    display: flex;
+    justify-content: space-evenly;
+}
+/* /buttons */
+
+
+
+/* button styling */
+button{
+    background-color: var(--buttonMain);
+    font-size: 14px;
+    width: 125px;
+    padding: 3px;
+    outline: none;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: var(--buttonHoover);
+}
+/* /button styling */
+
+
+/* Mobile Responsive */
+@media only screen and (max-width: 650px){
+    .container{
+        width: 95%;
+    }
+}

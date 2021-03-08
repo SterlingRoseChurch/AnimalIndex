@@ -1,0 +1,226 @@
+/* Imported fonts */
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Nova+Round&display=swap');
+
+
+/* Root */
+:root{
+    --buttonMain: rgb(255, 160, 123);
+    --buttonHoover: rgb(94, 255, 228);
+    --textColor: rgb(54, 54, 54);
+    --smallSpace: 25px;
+    --space: 50px;
+ }
+
+
+/* Browser Styling */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* All Content Syling */
+body {
+    background: #22c1c3;
+    background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);
+    background: linear-gradient(to right, #fdbb2d, #22c1c3);
+    color: var(--textColor);
+}
+
+.all-content{
+    margin-top: 75px;
+}
+
+.container{
+    background-image: radial-gradient(circle, rgb(255, 255, 255) , #fdbb2d );
+    width: 50%;
+    margin: auto;
+    border: 2px solid rgb(54, 54, 54);
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+/* /All Content Styling */
+
+
+/* Header Section */
+.header{
+    margin-top: var(--smallSpace);
+    margin-bottom: var(--space);
+    color: var(--textColor);
+}
+
+.header p{
+    font-size: 22px;
+}
+/* /Header Section */
+
+
+/* Top Section: Add button/ Filter section */
+.top-section{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-bottom: var(--space);
+}
+
+.add-button button{
+    width: 175px;
+}
+
+.filter{
+    display: flex;
+}
+
+.filter label{
+    margin-right: 5px;
+}
+
+.filter select, option{
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.filter-buttons button{
+    width: 70px;
+}
+/* /Top Section */
+
+
+/* Index Section */
+.index{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.index table{
+    table-layout: fixed;
+    width: 550px;
+}
+
+.index td{
+    background-color: #fff;
+    padding: 4px;
+}
+
+.table-button{
+    width: 65px;
+}
+/* /Index Section */
+
+
+/* Counter */
+.counter{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: var(--space);
+    margin-bottom: var(--smallSpace);
+}
+
+.counter h2{
+    font-weight: 100;
+}
+/* /Counter */
+
+
+/* Footer */
+.footer-image img{
+    width: 100%;
+    border-radius: 30px;
+    transform:translateY(1.8%);
+}
+/* /Footer */
+
+
+/* Class/Main Styling */
+.main-font{
+    font-family: 'Coiny', cursive;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.second-font{
+    font-family: 'Nova Round', cursive;
+}
+
+.border{
+    border: 1px solid var(--textColor);
+}
+
+button{
+    background-color: var(--buttonMain);
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.5s;
+    padding: 2px;
+    border-radius: 8px;
+    outline: none;
+}
+
+button:hover{
+    background-color: var(--buttonHoover);
+}
+
+/* Mobile Responsive */
+@media only screen and (max-width: 1200px) {
+    .container{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .index{
+        font-size: 12px;
+    }
+    .index table{
+        width: 360px;
+    }
+    .index button{
+        font-size: 10px;
+        margin-bottom: 5px;
+        width: 50px;
+    }
+    .add-button button{
+        font-size: 10px;
+        width: 100px;
+    }
+    .filter-buttons button{
+        font-size: 10px;
+        width: 40px;
+    }
+
+    .filter select, option, label{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    .index table{
+        width: 225px;
+    }
+
+    .top-section{
+    flex-direction: column;
+    }
+
+    .filter{
+        flex-direction: column;
+    }
+
+    .filter option, select, label{
+        width: 25%;
+    }
+
+    .filter-buttons button{
+        float: left;
+        margin-top: 10px;
+    }
+
+        
+    
+}
+
